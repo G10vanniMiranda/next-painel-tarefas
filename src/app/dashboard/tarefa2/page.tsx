@@ -61,7 +61,7 @@ export default function Tarefa2() {
         setNome(tarefa.nome);
         setTime(tarefa.time);
         setData(tarefa.data);
-        setEditandoId(tarefa.id);
+        setEditandoId(tarefa.id)
     };
 
     const alternarStatus = (id: number) => {
@@ -72,7 +72,7 @@ export default function Tarefa2() {
     };
 
     return (
-        <div className="p-4 max-w-xl mx-auto flex flex-col gap-7 mt-3 bg-blue-50">
+        <div className="p-4 max-w-xl mx-auto flex flex-col gap-7 mt-3">
             <h1 className="font-bold mb-2 text-center text-5xl">Cadastre uma tarefa</h1>
 
             {/* Formulário */}

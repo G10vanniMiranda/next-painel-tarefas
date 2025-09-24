@@ -1,9 +1,9 @@
-import Tarefa1 from "./tarefa1/page"
+import Tarefa2 from "./dashboard/tarefa2/page"
 
 function App() {
   return (
-    <div className="bg-gray-700 min-h-screen">
-      <Tarefa1 />
+    <div className=" min-h-screen">
+      <Tarefa2 />
     </div>
   )
 }
