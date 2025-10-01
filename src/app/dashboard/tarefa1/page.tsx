@@ -3,7 +3,13 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { MoonStar, Sun, PencilLine, Trash, CheckCircle2, XCircle, CalendarClock } from "lucide-react";
+import { MoonStar, Sun, PencilLine, Trash, CheckCircle2, XCircle, CalendarClock, Link } from "lucide-react";
+
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 interface TarefaProps {
     id: number;
@@ -173,18 +179,29 @@ export default function Tarefa1() {
 
                 {/* Contadores */}
                 <div className="flex gap-3 mt-3">
-                    <div className="flex-1 bg-gradient-to-br from-green-700 via-green-800 to-green-900 justify-center items-center h-44 rounded-2xl flex flex-col-reverse shadow-lg border border-green-900">
-                        <p className="text-white font-semibold">Total Concluídas</p>
-                        <div className="text-5xl text-green-300">
-                            {tarefas.filter((concluidas) => concluidas.status).length}
-                        </div>
-                    </div>
+
+                    <Tooltip>
+                        <TooltipTrigger className="flex-1 bg-gradient-to-br from-green-700 via-green-800 to-green-900 justify-center items-center h-44 rounded-2xl flex flex-col-reverse shadow-lg border border-green-900">
+
+                            <p className="text-white font-semibold">Total Concluídas</p>
+                            <div className="text-5xl text-green-300">
+                                {tarefas.filter((concluidas) => concluidas.status).length}
+                            </div>
+                        </TooltipTrigger>
+                        <TooltipContent className="bg-white w-44 border-0 p-0">
+                            <p className="font-semibold text-xl text-black text-center p-2">Total de registros no sistema.</p>
+                        </TooltipContent>
+                    </Tooltip>
+
+
+
                     <div className="flex-1 bg-gradient-to-br from-indigo-700 via-indigo-800 to-indigo-900 justify-center items-center h-44 rounded-2xl flex flex-col-reverse shadow-lg border border-indigo-900">
                         <p className="text-white font-semibold">Total de Registros</p>
                         <div className="text-5xl text-indigo-200">
                             {tarefas.length}
                         </div>
                     </div>
+
                     <div className="flex-1 bg-gradient-to-br from-red-700 via-red-800 to-red-900 justify-center items-center h-44 rounded-2xl flex flex-col-reverse shadow-lg border border-red-900">
                         <p className="text-white font-semibold">Total Pendentes</p>
                         <div className="text-5xl text-red-200">
