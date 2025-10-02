@@ -1,9 +1,9 @@
-import Tarefa2 from "./dashboard/tarefa2/page"
+import Dashboard from "./dashboard/page"
 
 function App() {
   return (
     <div className=" min-h-screen">
-      <Tarefa2 />
+      <Dashboard />
     </div>
   )
 }
